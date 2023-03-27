@@ -8,6 +8,13 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
 
+# Use the devise gem as the session and account manager for the application
+gem 'devise'
+
+# Use the cancancan gem as an authorization library which restricts what resources a given user is allowed to access.
+gem 'cancancan'
+
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
