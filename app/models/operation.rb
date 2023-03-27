@@ -3,5 +3,6 @@ class Operation < ApplicationRecord
   has_many :group_operations, dependent: :delete_all
   has_many :groups, through: :group_operations
 
-  validates :name, :amount, presence: true, length: { in: 1..50 }
+  validates :name, presence: true
+  validates :amount, presence: true, numericality: true
 end
