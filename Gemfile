@@ -14,7 +14,6 @@ gem 'devise'
 # Use the cancancan gem as an authorization library which restricts what resources a given user is allowed to access.
 gem 'cancancan'
 
-
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
