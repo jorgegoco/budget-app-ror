@@ -12,6 +12,10 @@ Rails.application.routes.draw do
     root to: 'home#index', as: :unauthenticated_root
   end
 
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+
   resources :groups do
     resources :operations
   end

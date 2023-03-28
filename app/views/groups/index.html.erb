@@ -1,16 +1,22 @@
- <div>
-    <% @groups.each do |group| %>
-      <%= link_to group_operations_path(group.id) do %>
-        <div>
-          <img src=<%= group.icon %> alt=<%= group.name %>>
-          <h2><%= group.name %></h2>
-          <p>Total spent:$<span><%= group.total_spent %></span></p>
-        </div>
-      <% end %>
+<div>
+  <h1> Categories </h1>
+  <%= link_to destroy_user_session_path do %>
+      <i class="fas fa-sign-out-alt">SIGN OUT</i>
     <% end %>
-  </div>
-  <div>
-    <%= link_to new_group_path do %>
-      <button>Add new Category</button>
+</div>
+<div>
+  <% @groups.each do |group| %>
+    <%= link_to group_operations_path(group.id) do %>
+      <div>
+        <img src=<%= group.icon %> alt=<%= group.name %>>
+        <h2><%= group.name %></h2>
+        <p>Total spent:$<span><%= group.total_spent %></span></p>
+      </div>
     <% end %>
-  </div>
+  <% end %>
+</div>
+<div>
+  <%= link_to new_group_path do %>
+    <button>Add new Category</button>
+  <% end %>
+</div>

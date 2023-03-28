@@ -1,4 +1,14 @@
 <div>
+    <%= link_to groups_path do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+    <h1>Add Categorie</h1>
+     <%= link_to destroy_user_session_path do %>
+      <i class="fas fa-sign-out-alt">SIGN OUT</i>
+    <% end %>
+  </div>
+
+<div>
   <%= form_for @group, url: groups_path do |f| %>
     <div>
       <div>
