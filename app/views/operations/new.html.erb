@@ -1,0 +1,35 @@
+<div>
+  <%= link_to group_operations_path do %>
+    <i class="fas fa-arrow-left"></i>
+  <% end %>
+  <h1>Add Operation</h1>
+  <%= link_to destroy_user_session_path do %>
+      <i class="fas fa-sign-out-alt">SIGN OUT</i>
+    <% end %>
+</div>
+
+<div>
+  <%= form_for @operation, url: group_operations_path do |f| %>
+
+    <div>
+      <div>
+        <%= f.text_field :name, autofocus: true, placeholder:'Name', autocomplete: "name" %>
+      </div>
+
+      <div>
+        <%= f.text_field :amount, placeholder:'Amount',autocomplete: "amount" %>
+      </div>
+  
+      <% if @groups.any? %>
+        <div>
+          <%= f.label :categories %><br/>
+          <%= select_tag :groups, options_for_select(@groups.map { |s| [s.name, s.id] }), multiple: true, size: 3 %>
+        </div>
+      <% end %>
+    </div>
+
+    <div>
+      <%= f.submit "Add new operation" %>
+    </div>
+  <% end %>
+</div>
