@@ -1,0 +1,15 @@
+<div>
+  <%= form_for @group, url: groups_path do |f| %>
+    <div>
+      <div>
+        <%= f.text_field :name, autofocus: true, placeholder:'Name', autocomplete: "name" %>
+      </div>
+      <div>
+        <%= f.text_field :icon, placeholder:'Icon', autocomplete: "icon" %>
+      </div>
+    </div>
+    <div>
+      <%= f.submit "Add new category" %>
+    </div>
+  <% end %>
+</div>
