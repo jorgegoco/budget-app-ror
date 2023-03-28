@@ -13,3 +13,90 @@
  *= require_tree .
  *= require_self
  */
+
+ @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;700&display=swap');
+
+ :root {
+  --blue: #3778c2;
+  --green: #5fb523;
+  --gray: #434b54;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 90vh;
+}
+
+.home-title {
+  font-size: 4rem;
+  margin-top: 10%;
+}
+
+.home-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.home-login {
+  text-decoration: none;
+  font-size: 2rem;
+  color: white;
+  background-color: var(--blue);
+  width: 90%;
+  text-align: center;
+  padding: 1rem 0;
+  border-radius: 0.5rem;
+}
+
+.home-signup {
+  text-decoration: none;
+  font-size: 2rem;
+  color: var(--gray);
+  width: 90%;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.login, .signup {
+  margin: auto;
+  margin-top: 30vh;
+  padding: 20px;
+  text-align: center;
+  width: 55%;
+  border: 1px solid black;
+  box-shadow: 5px 10px;
+}
+
+.login .field, .signup .field {
+  margin-top: 15px;
+}
+
+.login .actions, .signup .actions {
+  margin: 15px 0;
+}
+
+.actions-button {
+  padding: 5px;
+  background-color: var(--green);
+}
+
+.shared-links {
+  text-decoration: none;
+  color: black;
+}
