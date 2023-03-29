@@ -16,13 +16,10 @@ class OperationsController < ApplicationController
       group = Group.find(id) unless id == ''
       @operation.groups.push(group) unless group.nil?
     end
-    # @groups = Group.all.where(user: current_user)
     @operation.user = current_user
     if @operation.save
       redirect_to group_operations_path
-      flash[:notice] = 'Operation created successfully'
     else
-      flash[:error] = "Can't be blank, record didn't get saved"
       render :new
     end
   end

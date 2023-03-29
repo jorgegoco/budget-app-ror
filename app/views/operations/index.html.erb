@@ -1,29 +1,24 @@
-<div>
-  <div>
-    <%= link_to groups_path do %>
-      <i class="fas fa-arrow-left"></i>
-    <% end %>
-    <h1> Operations </h1>
-    <%= link_to destroy_user_session_path do %>
-      <i class="fas fa-sign-out-alt">SIGN OUT</i>
-    <% end %>
+<div class="operations">
+  <div class="operations-header">
+    <%= link_to "BACK", groups_path %>
+    <h1 class="operations-title">Operations</h1>
+    <%= link_to "SIGN OUT", destroy_user_session_path %>
   </div>
 
-  <div>
+  <div class="operations-body">
 
-    <div>
+    <div class="operations-info">
       <img src=<%= @group.icon %>>
       <span><%= @group.name %></span>
     </div>
 
-    <div>
+    <div class="operations-total">
       <p>Total Amount: </p>
       <span>$<%= @group.total_spent %></span>
     </div>
     <table>
       <thead>
         <tr>
-          <td>Operation</td>
           <td>Date</td>
           <td>Name</td>
           <td>Cost</td>
@@ -31,31 +26,20 @@
       </thead>
 
       <tbody>
-        <% if @operations.empty? %>
-          <tr>
-            <td>
-              <img src="https://cdn2.iconfinder.com/data/icons/ecommerce-filled-outline-1/32/Ecommerce-shopping-sale-transaction_28-512.png" alt="transaction icon">
-            </td>
-            <td>No operations found</td>
-          </tr>
-        <% end %>
         <% @operations.each do |operation| %>
           <tr>
-            <td>
-              <img src="https://cdn2.iconfinder.com/data/icons/ecommerce-filled-outline-1/32/Ecommerce-shopping-sale-transaction_28-512.png" alt="transaction icon">
-            </td>
             <td><%= operation.created_at %></td>
             <td><%= operation.name %></td>
-            <td><%= operation.amount %></td>
+            <td>$<%= operation.amount %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
   </div>
 
-  <div>
+  <div class="operation-add">
     <%= link_to new_group_operation_path do %>
-      <button>Add new operation</button>
+      <button class="operation-add-button">ADD NEW OPERATION</button>
     <% end %>
   </div> 
 </div>

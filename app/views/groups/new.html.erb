@@ -1,25 +1,24 @@
-<div>
-    <%= link_to groups_path do %>
-      <i class="fas fa-arrow-left"></i>
-    <% end %>
-    <h1>Add Categorie</h1>
-     <%= link_to destroy_user_session_path do %>
-      <i class="fas fa-sign-out-alt">SIGN OUT</i>
-    <% end %>
+<div class="addgroup">
+  <div class="addgroup-header">
+    <%= link_to "BACK", groups_path %>
+    <h1 class="addgroup-title">Add Category</h1>
+    <%= link_to "SIGN OUT", destroy_user_session_path %>
   </div>
 
-<div>
-  <%= form_for @group, url: groups_path do |f| %>
-    <div>
-      <div>
-        <%= f.text_field :name, autofocus: true, placeholder:'Name', autocomplete: "name" %>
+  <div class="addgroup-form">
+    <%= form_for @group, url: groups_path do |f| %>
+      <div class="addgroup-form-inputs">
+        <div class="addgroup-form-input">
+          <%= f.text_field :name, autofocus: true, placeholder:'Name', autocomplete: "name" %>
+        </div>
+
+        <div class="addgroup-form-input">
+          <%= f.text_field :icon, placeholder:'Icon', autocomplete: "icon" %>
+        </div>
       </div>
-      <div>
-        <%= f.text_field :icon, placeholder:'Icon', autocomplete: "icon" %>
+      <div class="addgroup-form-submit">
+        <%= f.submit "ADD NEW CATEGORY" %>
       </div>
-    </div>
-    <div>
-      <%= f.submit "Add new category" %>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
