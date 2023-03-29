@@ -30,6 +30,7 @@
   padding: 0;
   font-family: sans-serif;
   text-decoration: none;
+  overflow: scroll;
 }
 
 .home {
@@ -315,6 +316,61 @@ table tbody {
   position: absolute;
   width: 100%;
   bottom: 0;
+}
+
+.addoperation-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--blue);
+  color: #fff;
+}
+
+.addoperation-title {
+  font-size: 1.6rem;
+  flex: 1;
+  text-align: center;
+}
+
+.addoperation-form {
+  width: 100%;
+}
+
+.addoperation-form-field {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.addoperation-form-field label {
+  flex: 1;
+  font-size: 1rem;
+}
+
+.addoperation-form-field input {
+  flex: 3;
+  padding: 0.5rem;
+}
+
+.addoperation-form-submit {
+  padding: 1rem;
+  background-color: var(--green);
+  margin-top: 1rem;
+}
+
+.addoperation-form-submit input {
+  padding: 1rem;
+  width: 100%;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+#groups {
+  flex: 1;
+  padding: 10px;
 }
 
 @media screen and (min-width: 600px) {

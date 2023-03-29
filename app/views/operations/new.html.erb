@@ -1,35 +1,31 @@
-<div>
-  <%= link_to group_operations_path do %>
-    <i class="fas fa-arrow-left"></i>
-  <% end %>
-  <h1>Add Operation</h1>
-  <%= link_to destroy_user_session_path do %>
-      <i class="fas fa-sign-out-alt">SIGN OUT</i>
-    <% end %>
+<div class="addoperation-header">
+  <%= link_to "BACK", group_operations_path %>
+  <h1 class="addoperation-title">Add Operation</h1>
+  <%= link_to "SIGN OUT", destroy_user_session_path %>
 </div>
 
-<div>
+<div class="addoperation-form">
   <%= form_for @operation, url: group_operations_path do |f| %>
 
     <div>
-      <div>
+      <div class="addoperation-form-field">
         <%= f.text_field :name, autofocus: true, placeholder:'Name', autocomplete: "name" %>
       </div>
 
-      <div>
+      <div class="addoperation-form-field">
         <%= f.text_field :amount, placeholder:'Amount',autocomplete: "amount" %>
       </div>
   
       <% if @groups.any? %>
-        <div>
+        <div class="addoperation-form-field">
           <%= f.label :categories %><br/>
           <%= select_tag :groups, options_for_select(@groups.map { |s| [s.name, s.id] }), multiple: true, size: 3 %>
         </div>
       <% end %>
     </div>
 
-    <div>
-      <%= f.submit "Add new operation" %>
+    <div class="addoperation-form-submit">
+      <%= f.submit "ADD NEW OPERATION" %>
     </div>
   <% end %>
 </div>
