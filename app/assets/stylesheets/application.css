@@ -43,7 +43,7 @@
 
 .home-title {
   font-size: 4rem;
-  margin-top: 10%;
+  margin-top: 200px;
 }
 
 .home-links {
@@ -168,10 +168,69 @@
   bottom: 0;
 }
 
-.add-group-button {
+.group-add-button {
   width: 100%;
   padding: 1rem;
   background: transparent;
   color: #fff;
   border: 1px solid #fff;
+}
+
+.addgroup {
+  background-color: rgb(232, 229, 229);
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items: center;
+  height: 100vh;
+}
+
+.addgroup-header {
+ 
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--blue);
+  color: #fff;
+  width: 100%;
+}
+
+.addgroup-title {
+  font-size: 1.6rem;
+  flex: 1;
+  text-align: center;
+}
+
+.addgroup-form {
+  width: 100%;
+}
+
+.addgroup-form-input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.addgroup-form-input label {
+  font-size: 1rem;
+}
+
+.addgroup-form-input input {
+  flex: 3;
+  padding: 0.5rem;
+}
+
+.addgroup-form-submit {
+  padding: 1rem;
+  background-color: var(--green);
+  margin-top: 1rem;
+}
+
+.addgroup-form-submit input {
+  padding: 1rem;
+  width: 100%;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
 }
