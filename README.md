@@ -68,8 +68,8 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://github.com/jorgegoco/budget-app-ror)
-
+- [Live Demo Link](https://budget-app-xplx.onrender.com)
+- [Loom presentation](https://www.loom.com/share/1cc98859833e4f6a9db44098b8057425)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
