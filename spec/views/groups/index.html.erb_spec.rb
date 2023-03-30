@@ -8,12 +8,12 @@ RSpec.describe 'groups/index', type: :view do
              Group.create!(
                name: 'Name1',
                icon: 'Icon1',
-               user: user
+               user:
              ),
              Group.create!(
                name: 'Name2',
                icon: 'Icon2',
-               user: user
+               user:
              )
            ])
   end

@@ -6,9 +6,9 @@ RSpec.describe '/operations', type: :request do
   let(:group) { Group.create(user:, name: 'Shopping', icon: 'icon_here') }
 
   let(:valid_attributes) do
-    { user: user, name: 'Food', amount: 22 }
+    { user:, name: 'Food', amount: 22 }
   end
-  
+
   describe 'GET /new' do
     it 'renders a successful response' do
       get new_group_operation_url(group)
