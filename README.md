@@ -162,6 +162,8 @@ If you like this project...give it a ⭐️!
 
 I would like to thank [@microverse](https://www.microverse.org/)
 
+Original design idea by [Gregoire Vella on Behance](https://www.behance.net/gregoirevell).
+
 
 ## 📝 License <a name="license"></a>
 
