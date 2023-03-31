@@ -13,3 +13,366 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;700&display=swap');
+
+:root {
+  --blue: #3778c2;
+  --green: #5fb523;
+  --gray: #434b54;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-decoration: none;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 90vh;
+}
+
+.home-title {
+  font-size: 4rem;
+  margin-top: 200px;
+}
+
+.home-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.home-login {
+  font-size: 2rem;
+  color: white;
+  background-color: var(--blue);
+  width: 90%;
+  text-align: center;
+  padding: 1rem 0;
+  border-radius: 0.5rem;
+}
+
+.home-signup {
+  font-size: 2rem;
+  color: var(--gray);
+  width: 90%;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.login,
+.signup {
+  margin: auto;
+  margin-top: 30vh;
+  padding: 20px;
+  text-align: center;
+  width: 55%;
+  border: 1px solid black;
+  box-shadow: 5px 10px;
+}
+
+.login .field,
+.signup .field {
+  margin-top: 15px;
+}
+
+.login .actions,
+.signup .actions {
+  margin: 15px 0;
+}
+
+.actions-button {
+  padding: 5px;
+  background-color: var(--green);
+}
+
+.shared-links {
+  color: black;
+}
+
+.groups {
+  background-color: rgb(232, 229, 229);
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.groups-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--blue);
+  color: #fff;
+}
+
+.groups-title {
+  font-size: 1.6rem;
+  flex: 1;
+  text-align: center;
+}
+
+.group-items {
+  width: 100%;
+  padding: 1rem;
+}
+
+.group-item {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--grey);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  color: var(--gray);
+}
+
+.group-item img {
+  flex: 1;
+  width: 30%;
+}
+
+.group-item h2 {
+  flex: 2;
+  font-size: 1.6rem;
+  font-weight: 100;
+  margin-left: 1rem;
+}
+
+.group-item p {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+
+.add-group {
+  padding: 1rem;
+  background-color: var(--green);
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.group-add-button {
+  width: 100%;
+  padding: 1rem;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.addgroup {
+  background-color: rgb(232, 229, 229);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+}
+
+.addgroup-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--blue);
+  color: #fff;
+  width: 100%;
+}
+
+.addgroup-title {
+  font-size: 1.6rem;
+  flex: 1;
+  text-align: center;
+}
+
+.addgroup-form {
+  width: 100%;
+}
+
+.addgroup-form-input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.addgroup-form-input label {
+  font-size: 1rem;
+}
+
+.addgroup-form-input input {
+  flex: 3;
+  padding: 0.5rem;
+}
+
+.addgroup-form-submit {
+  padding: 1rem;
+  background-color: var(--green);
+  margin-top: 1rem;
+}
+
+.addgroup-form-submit input {
+  padding: 1rem;
+  width: 100%;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.operations {
+  background-color: rgb(232, 229, 229);
+  min-height: 100vh;
+}
+
+.operations-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--blue);
+  color: #fff;
+}
+
+.operations-title {
+  font-size: 1.6rem;
+  flex: 1;
+  text-align: center;
+}
+
+.operations-body {
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.operations-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  font-size: 1.6rem;
+  background-color: #fff;
+  align-items: center;
+}
+
+.operations-info img {
+  width: 20%;
+}
+
+.operations-total {
+  margin-left: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 95%;
+  background-color: #fff;
+  margin: auto;
+  margin-top: 100px;
+}
+
+table tr td {
+  border: 1px solid #000;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+table thead {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+table tbody {
+  font-size: 1rem;
+}
+
+.operation-add-button {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #fff;
+  background: none;
+  color: #fff;
+}
+
+.operation-add {
+  padding: 1rem;
+  background-color: var(--green);
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.addoperation-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--blue);
+  color: #fff;
+}
+
+.addoperation-title {
+  font-size: 1.6rem;
+  flex: 1;
+  text-align: center;
+}
+
+.addoperation-form {
+  width: 100%;
+}
+
+.addoperation-form-field {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.addoperation-form-field label {
+  flex: 1;
+  font-size: 1rem;
+}
+
+.addoperation-form-field input {
+  flex: 3;
+  padding: 0.5rem;
+}
+
+.addoperation-form-submit {
+  padding: 1rem;
+  background-color: var(--green);
+  margin-top: 1rem;
+}
+
+.addoperation-form-submit input {
+  padding: 1rem;
+  width: 100%;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+#groups {
+  flex: 1;
+  padding: 10px;
+}
+
+@media screen and (min-width: 600px) {
+  .operation-add,
+  .add-group {
+    position: sticky;
+  }
+}

@@ -1,0 +1,45 @@
+<div class="operations">
+  <div class="operations-header">
+    <%= link_to "BACK", groups_path %>
+    <h1 class="operations-title">Operations</h1>
+    <%= link_to "SIGN OUT", destroy_user_session_path %>
+  </div>
+
+  <div class="operations-body">
+
+    <div class="operations-info">
+      <img src=<%= @group.icon %>>
+      <span><%= @group.name %></span>
+    </div>
+
+    <div class="operations-total">
+      <p>Total Amount: </p>
+      <span>$<%= @group.total_spent %></span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <td>Date</td>
+          <td>Name</td>
+          <td>Cost</td>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @operations.each do |operation| %>
+          <tr>
+            <td><%= operation.created_at %></td>
+            <td><%= operation.name %></td>
+            <td>$<%= operation.amount %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="operation-add">
+    <%= link_to new_group_operation_path do %>
+      <button class="operation-add-button">ADD NEW OPERATION</button>
+    <% end %>
+  </div> 
+</div>
