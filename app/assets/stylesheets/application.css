@@ -137,6 +137,7 @@
   margin-bottom: 1rem;
   background-color: #fff;
   color: var(--gray);
+  transition: all 0.3s ease-in-out;
 }
 
 .group-item img {
@@ -160,6 +161,10 @@
   margin-top: 10px;
 }
 
+.group-item:hover {
+  box-shadow: 3px 3px 10px black;
+}
+
 .add-group {
   padding: 1rem;
   background-color: var(--green);
@@ -169,6 +174,7 @@
 }
 
 .group-add-button {
+  cursor: pointer;
   width: 100%;
   padding: 1rem;
   background: transparent;
@@ -300,6 +306,7 @@ table tbody {
 }
 
 .operation-add-button {
+  cursor: pointer;
   width: 100%;
   padding: 1rem;
   border: 1px solid #fff;
@@ -376,3 +383,5 @@ table tbody {
     position: sticky;
   }
 }
+
+

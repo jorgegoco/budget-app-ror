@@ -28,7 +28,7 @@
       <tbody>
         <% @operations.each do |operation| %>
           <tr>
-            <td><%= operation.created_at %></td>
+            <td><%= operation.created_at.strftime("%m-%d-%Y") %></td>
             <td><%= operation.name %></td>
             <td>$<%= operation.amount %></td>
           </tr>
