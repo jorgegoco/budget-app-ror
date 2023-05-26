@@ -11,12 +11,13 @@ class OperationsController < ApplicationController
 
   def create
     @operation = Operation.new(operation_params)
-    @groups = params[:groups]
-    @groups.each do |id|
-      group = Group.find(id) unless id == ''
-      @operation.groups.push(group) unless group.nil?
-    end
     @operation.user = current_user
+    @group = Group.find_by(user: current_user, id: params[:group_id])
+    @group.operations.push(@operation)
+    # @groups.each do |id|
+    #   group = Group.find(id) unless id == ''
+    #   @operation.groups.push(group) unless group.nil?
+    # end
     if @operation.save
       redirect_to group_operations_path
     else

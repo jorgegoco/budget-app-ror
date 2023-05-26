@@ -8,4 +8,14 @@ class Group < ApplicationRecord
   def total_spent
     operations.map(&:amount).sum.round(2)
   end
+
+  after_destroy :delete_associated_operations
+
+  private
+
+  def delete_associated_operations
+    self.operations.each do |operation|
+      operation.destroy
+    end
+  end
 end

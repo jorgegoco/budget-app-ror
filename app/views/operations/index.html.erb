@@ -15,7 +15,7 @@
     <div class="operations-total">
       <p>Total Amount: </p>
       <span>$<%= @group.total_spent %></span>
-      <%= link_to "Destroy", @group, data: { 'turbo-method': :delete } %>
+      <%= button_to "Delete", @group, method: :delete %>
     </div>
     <table>
       <thead>
