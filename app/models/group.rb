@@ -1,7 +1,6 @@
 class Group < ApplicationRecord
   belongs_to :user
-  has_many :group_operations, dependent: :delete_all
-  has_many :operations, through: :group_operations
+  has_many :operations, dependent: :destroy
 
   validates :name, :icon, presence: true
 

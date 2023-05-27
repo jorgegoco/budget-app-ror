@@ -16,12 +16,15 @@
         <%= f.text_field :amount, placeholder:'Amount',autocomplete: "amount" %>
       </div>
   
-      <% if @groups.any? %>
-        <div class="addoperation-form-field">
-          <%= f.label :categories %><br/>
-          <%= select_tag :groups, options_for_select(@groups.map { |s| [s.name, s.id] }), multiple: true, size: 3 %>
-        </div>
-      <% end %>
+      <div class="addoperation-form-field">
+        <%= f.label :category %><br/>
+        <% selected_group = @groups.detect {|g| g.id == params[:group_id].to_i} %>
+       <% if selected_group %>
+         <%= f.text_field :category, value: selected_group.name, readonly: true %>
+       <% else %>
+         <%= f.text_field :category %>
+       <% end %>
+     </div>
     </div>
 
     <div class="addoperation-form-submit">

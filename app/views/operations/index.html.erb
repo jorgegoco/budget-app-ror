@@ -13,8 +13,8 @@
     </div>
 
     <div class="operations-total">
-      <p>Total Amount: </p>
-      <span>$<%= @group.total_spent %></span>
+      <p>Total Amount: <span><strong style="font-weight: 700;">$<%= @group.total_spent %></strong></span></p>
+      <%= button_to "Delete Category", @group, method: :delete, class: "delete-button" %>
     </div>
     <table>
       <thead>
@@ -22,15 +22,19 @@
           <td>Date</td>
           <td>Name</td>
           <td>Cost</td>
+          <td>Actions</td>
         </tr>
       </thead>
 
       <tbody>
         <% @operations.each do |operation| %>
           <tr>
-            <td><%= operation.created_at %></td>
+            <td><%= operation.created_at.strftime("%m-%d-%Y") %></td>
             <td><%= operation.name %></td>
             <td>$<%= operation.amount %></td>
+            <td>
+              <%= button_to "Delete", group_operation_path(@group, operation), method: :delete, class: "delete-button" %>
+            </td>
           </tr>
         <% end %>
       </tbody>

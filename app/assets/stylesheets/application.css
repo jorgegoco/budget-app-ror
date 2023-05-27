@@ -104,7 +104,7 @@
 
 .groups {
   background-color: rgb(232, 229, 229);
-  height: 100vh;
+  height: 90vh;
   overflow-y: scroll;
 }
 
@@ -123,25 +123,28 @@
 }
 
 .group-items {
-  width: 100%;
   padding: 1rem;
 }
 
 .group-item {
+  height: 100px;
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
   border: 1px solid var(--grey);
-  padding: 1rem;
+  padding: 0.7rem;
   margin-bottom: 1rem;
   background-color: #fff;
   color: var(--gray);
+  transition: all 0.3s ease-in-out;
 }
 
 .group-item img {
   flex: 1;
   width: 30%;
+  height: 80px;
+  object-fit: cover;
 }
 
 .group-item h2 {
@@ -160,8 +163,12 @@
   margin-top: 10px;
 }
 
+.group-item:hover {
+  box-shadow: 3px 3px 10px black;
+}
+
 .add-group {
-  padding: 1rem;
+  padding: 1.5rem;
   background-color: var(--green);
   position: absolute;
   width: 100%;
@@ -169,6 +176,7 @@
 }
 
 .group-add-button {
+  cursor: pointer;
   width: 100%;
   padding: 1rem;
   background: transparent;
@@ -205,9 +213,10 @@
 }
 
 .addgroup-form-input {
-  width: 100%;
+  width: 80%;
   display: flex;
   align-items: center;
+  margin: auto;
   margin-top: 1rem;
 }
 
@@ -227,6 +236,7 @@
 }
 
 .addgroup-form-submit input {
+  cursor: pointer;
   padding: 1rem;
   width: 100%;
   background: transparent;
@@ -253,16 +263,11 @@
   text-align: center;
 }
 
-.operations-body {
-  width: 100%;
-  padding: 1rem 0;
-}
-
 .operations-info {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  margin: 1.5rem 0;
+  margin: 1rem;
   font-size: 1.6rem;
   background-color: #fff;
   align-items: center;
@@ -273,7 +278,8 @@
 }
 
 .operations-total {
-  margin-left: 20px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 table {
@@ -281,7 +287,7 @@ table {
   width: 95%;
   background-color: #fff;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 75px;
 }
 
 table tr td {
@@ -299,7 +305,22 @@ table tbody {
   font-size: 1rem;
 }
 
+.operations-body {
+  padding: 1rem 0;
+  height: calc(100vh - 150px);
+  overflow-y: scroll;
+}
+
+.delete-button {
+  cursor: pointer;
+  padding: 0.3rem;
+  border: 1px solid black;
+  background: rgb(231, 86, 86);
+  color: black;
+}
+
 .operation-add-button {
+  cursor: pointer;
   width: 100%;
   padding: 1rem;
   border: 1px solid #fff;
@@ -310,7 +331,7 @@ table tbody {
 .operation-add {
   padding: 1rem;
   background-color: var(--green);
-  position: absolute;
+  position: fixed;
   width: 100%;
   bottom: 0;
 }
@@ -371,8 +392,25 @@ table tbody {
 }
 
 @media screen and (min-width: 600px) {
-  .operation-add,
-  .add-group {
-    position: sticky;
+  body {
+    width: 70%;
+    margin: auto;
+  }
+
+  .add-group,
+  .operation-add {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    width: 50%;
+    margin: auto;
+  }
+
+  .add-group,
+  .operation-add {
+    width: 50%;
   }
 }
