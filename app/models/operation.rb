@@ -1,7 +1,6 @@
 class Operation < ApplicationRecord
   belongs_to :user
-  has_one :group_operation, dependent: :destroy
-  has_one :group, through: :group_operation
+  belongs_to :group
 
   validates :name, presence: true
   validates :amount, presence: true, numericality: true
