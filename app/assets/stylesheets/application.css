@@ -282,7 +282,8 @@
 }
 
 .operations-total {
-  margin-left: 20px;
+  display: flex;
+  justify-content:space-evenly;
 }
 
 table {
@@ -307,6 +308,13 @@ table thead {
 table tbody {
   font-size: 1rem;
 }
+ .delete-button {
+  cursor: pointer;
+  padding: 0.3rem;
+  border: 1px solid black;
+  background: rgb(231, 86, 86);
+  color: black;
+ }
 
 .operation-add-button {
   cursor: pointer;

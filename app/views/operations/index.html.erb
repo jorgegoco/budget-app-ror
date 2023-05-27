@@ -13,9 +13,8 @@
     </div>
 
     <div class="operations-total">
-      <p>Total Amount: </p>
-      <span>$<%= @group.total_spent %></span>
-      <%= button_to "Delete Category", @group, method: :delete %>
+      <p>Total Amount: <span>$<%= @group.total_spent %></span></p>     
+      <%= button_to "Delete Category", @group, method: :delete, class: "delete-button" %>
     </div>
     <table>
       <thead>
@@ -34,7 +33,7 @@
             <td><%= operation.name %></td>
             <td>$<%= operation.amount %></td>
             <td>
-              <%= button_to "Delete", group_operation_path(@group, operation), method: :delete %>
+              <%= button_to "Delete", group_operation_path(@group, operation), method: :delete, class: "delete-button" %>
             </td>
           </tr>
         <% end %>
