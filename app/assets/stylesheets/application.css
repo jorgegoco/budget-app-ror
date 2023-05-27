@@ -263,10 +263,6 @@
   text-align: center;
 }
 
-.operations-body {
-  padding: 1rem 0;
-}
-
 .operations-info {
   display: flex;
   justify-content: space-between;
@@ -283,7 +279,7 @@
 
 .operations-total {
   display: flex;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
 }
 
 table {
@@ -310,6 +306,7 @@ table tbody {
 }
 
 .operations-body {
+  padding: 1rem 0;
   height: calc(100vh - 150px);
   overflow-y: scroll;
 }
@@ -417,4 +414,3 @@ table tbody {
     width: 50%;
   }
 }
-
