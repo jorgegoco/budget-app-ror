@@ -168,7 +168,7 @@
 }
 
 .add-group {
-  padding: 1rem;
+  padding: 1.5rem;
   background-color: var(--green);
   position: absolute;
   width: 100%;
@@ -291,7 +291,7 @@ table {
   width: 95%;
   background-color: #fff;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 75px;
 }
 
 table tr td {
@@ -308,13 +308,19 @@ table thead {
 table tbody {
   font-size: 1rem;
 }
- .delete-button {
+
+.operations-body {
+  height: calc(100vh - 150px);
+  overflow-y: scroll;
+}
+
+.delete-button {
   cursor: pointer;
   padding: 0.3rem;
   border: 1px solid black;
   background: rgb(231, 86, 86);
   color: black;
- }
+}
 
 .operation-add-button {
   cursor: pointer;
@@ -328,7 +334,7 @@ table tbody {
 .operation-add {
   padding: 1rem;
   background-color: var(--green);
-  position: absolute;
+  position: fixed;
   width: 100%;
   bottom: 0;
 }
@@ -389,10 +395,26 @@ table tbody {
 }
 
 @media screen and (min-width: 600px) {
-  .operation-add,
-  .add-group {
-    position: sticky;
+  body {
+    width: 70%;
+    margin: auto;
+  }
+
+  .add-group,
+  .operation-add {
+    width: 70%;
   }
 }
 
+@media screen and (min-width: 1000px) {
+  body {
+    width: 50%;
+    margin: auto;
+  }
+
+  .add-group,
+  .operation-add {
+    width: 50%;
+  }
+}
 
