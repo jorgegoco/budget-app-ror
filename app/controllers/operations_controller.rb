@@ -22,7 +22,7 @@ class OperationsController < ApplicationController
 
   def destroy
     @operation.destroy
-    redirect_to group_operations_path(@group) 
+    redirect_to group_operations_path(@group)
   end
 
   private
