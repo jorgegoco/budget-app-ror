@@ -1,18 +1,17 @@
 class OperationsController < ApplicationController
+  before_action :set_instance_variables
+
   def index
-    @group = Group.find_by(user: current_user, id: params[:group_id])
     @operations = @group.operations.order(created_at: :desc)
   end
 
   def new
     @operation = Operation.new
-    @groups = Group.all.where(user: current_user)
   end
 
   def create
     @operation = Operation.new(operation_params)
     @operation.user = current_user
-    @group = Group.find_by(user: current_user, id: params[:group_id])
     @group.operations.push(@operation)
     if @operation.save
       redirect_to group_operations_path
@@ -22,17 +21,17 @@ class OperationsController < ApplicationController
   end
 
   def destroy
-    @group = Group.find_by(user: current_user, id: params[:group_id])
-    @operation = @group.operations.find(params[:id])
-    if @operation.destroy
-      flash[:notice] = "Operation deleted successfully."
-    else
-      flash[:alert] = "Error deleting operation."
-    end
-    redirect_to group_operations_path(@group)
+    @operation.destroy
+    redirect_to group_operations_path(@group) 
   end
 
   private
+
+  def set_instance_variables
+    @group = Group.find_by(user: current_user, id: params[:group_id])
+    @groups = Group.all.where(user: current_user)
+    @operation = Operation.find(params[:id]) if params[:id]
+  end
 
   def operation_params
     params.require(:operation).permit(:name, :amount)

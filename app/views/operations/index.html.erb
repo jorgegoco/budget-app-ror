@@ -34,7 +34,7 @@
             <td><%= operation.name %></td>
             <td>$<%= operation.amount %></td>
             <td>
-              <%= button_to "Delete", group_operation_path(@group, operation), method: :delete, data: { confirm: "Are you sure?" } %>
+              <%= button_to "Delete", group_operation_path(@group, operation), method: :delete %>
             </td>
           </tr>
         <% end %>
