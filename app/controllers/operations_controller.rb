@@ -14,15 +14,22 @@ class OperationsController < ApplicationController
     @operation.user = current_user
     @group = Group.find_by(user: current_user, id: params[:group_id])
     @group.operations.push(@operation)
-    # @groups.each do |id|
-    #   group = Group.find(id) unless id == ''
-    #   @operation.groups.push(group) unless group.nil?
-    # end
     if @operation.save
       redirect_to group_operations_path
     else
       render :new
     end
+  end
+
+  def destroy
+    @group = Group.find_by(user: current_user, id: params[:group_id])
+    @operation = @group.operations.find(params[:id])
+    if @operation.destroy
+      flash[:notice] = "Operation deleted successfully."
+    else
+      flash[:alert] = "Error deleting operation."
+    end
+    redirect_to group_operations_path(@group)
   end
 
   private

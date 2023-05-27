@@ -20,7 +20,7 @@ class GroupsController < ApplicationController
   def destroy
     @group = Group.find(params[:id])
     @group.destroy
-    redirect_to groups_path, status: :see_other
+    redirect_to groups_path
   end
 
   private
