@@ -29,40 +29,32 @@
 **The Budget app** is about building a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
 ## 🛠 Built With <a name="built-with"></a>
-- Ruby on Rails
-- PostgreSQL
 
 ### Tech Stack <a name="tech-stack"></a>
 
 
 <details>
-  <summary>Client</summary>
+  <summary>Ruby on Rails</summary>
   <ul>
-    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
+    <li><a href="https://ruby-doc.org/core-3.1.2/">Ruby</a></li>
+  </ul>
+    <ul>
+    <li><a href="https://ruby-doc.org/core-3.1.2/">Rails</a></li>
   </ul>
 </details>
-
 <details>
-  <summary>Server</summary>
+  <summary>PostgreSQL </summary>
   <ul>
-    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
+    <li><a href="https://www.postgresql.org/download/">PostgreSQL </a></li>
   </ul>
 </details>
-
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-  </ul>
-</details>
-
 
 
 ### Key Features <a name="key-features"></a>
 
-- **User can register or log in**
-- **Data is private for each user**
-- **User can add Categories, and Operations**
+- **Users can register or log in, so that the data is private to them**
+- **New transactions associated with a category**
+- **See the money spent on each category**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -83,32 +75,33 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-- `Ruby on Rails` installed in your terminal. 
-- `PostgreSQL` installed in your terminal.
+- Ruby, Rails, and PostgreSQL installed in your terminal, or run in with docker
 
 ### Setup
 
 Clone this repository to your desired folder:
+```
+  git clone git@github.com:jorgegoco/budget-app-ror.git
 
-```sh
-  cd desired-folder
-  git https://github.com/jorgegoco/budget-app-ror.git
+  cd budget-app-ror
+
 ```
 
 ### Install
 
 Install this project with:
 
-```sh
-  cd budget-app-ror
-  bundle install
+```
+  bundle install 
 ```
 
 ### Usage
 
 To run the project, execute the following command:
 
-```sh
+```
+  rails db:create db:migrate db:seed
+
   rails server
 ```
 
@@ -116,7 +109,7 @@ To run the project, execute the following command:
 
 To run tests, run the following command:
 
-```sh
+```
   bundle exec rspec
 ```
 
