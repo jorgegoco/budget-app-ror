@@ -1,49 +1,72 @@
 require 'rails_helper'
 
 RSpec.describe 'Groups', type: :request do
-  include Devise::Test::IntegrationHelpers
+
+  let(:user) { User.create(name: 'pepe', email: 'pepe@gmail.com', password: '123123') }
+  let(:valid_attributes) { { name: 'Some', icon: 'some' } }
+  let(:invalid_attributes) { { name: '' } }
+
+
   before do
-    @user = User.create(name: 'pepe', email: 'pepe@gmail.com', password: '123123')
-    @group = @user.groups.create(name: 'Some', icon: 'some')
-    sign_in @user
+    sign_in user
   end
 
   describe 'GET /index' do
-    it 'returns http success' do
-      get groups_path
-      expect(response).to have_http_status(200)
-      expect(response.body).to include('Some')
+    it "renders a successful response" do
+      group = user.groups.create valid_attributes
+      get groups_url
+      expect(response).to be_successful
+      expect(response.body).to include(group.name)
     end
   end
 
-# RSpec.describe GroupsController, type: :request do
-#   let(:user) { User.create(name: 'Pepe', email: 'pepe@gmail.com', password: '123123') }
+  describe 'GET /new' do
+    it 'renders a successful response' do
+      get new_group_url
+      expect(response).to be_successful
+    end
+  end
 
-#   describe 'GET #index' do
-#     it 'returns a success response' do
-#       Group.create!(name: 'Test Group', icon: 'icon', user: user)
-#       get groups_url
-#       # puts response.body
-#       # expect(response.body).to include('Test Group')
-#       expect(response).to have_http_status(:ok)
-#       expect(response).to render_template('index')
-#     end
-#   end
+  describe "POST /create" do
+    context "with valid parameters" do
+      it "creates a new Group" do
+        expect {
+          post groups_url, params: { group: valid_attributes }
+        }.to change(Group, :count).by(1)
+      end
 
-  # describe 'GET /new' do
-  #   it 'renders a successful response' do
-  #     get new_group_url
-  #     expect(response).to be_successful
-  #   end
-  # end
+      it "redirects to the group's index" do
+        post groups_url, params: { group: valid_attributes }
+        expect(response).to redirect_to(groups_url)
+      end
+    end
 
-  # describe 'POST /create' do
-  #   context 'with valid parameters' do
-  #     it 'creates a new Group' do
-  #       expect do
-  #         Group.create! valid_attributes
-  #       end.to change(Group, :count).by(1)
-  #     end
-  #   end
-  # end
+    context "with invalid parameters" do
+      it "does not create a new Group" do
+        expect {
+          post groups_url, params: { group: invalid_attributes }
+        }.to change(Group, :count).by(0)
+      end
+
+      it "renders a successful response (i.e. to display the 'new' template)" do
+        post groups_url, params: { group: invalid_attributes }
+        expect(response).to be_successful
+      end
+    end
+  end
+
+  describe "DELETE /destroy" do
+    it "destroys the requested Group" do
+      group = user.groups.create valid_attributes
+      expect {
+        delete group_url(group)
+      }.to change(Group, :count).by(-1)
+    end
+
+    it "redirects to the group's index" do
+      group = user.groups.create valid_attributes
+      delete group_url(group)
+      expect(response).to redirect_to(groups_url)
+    end
+  end
 end
